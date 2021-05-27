@@ -9,6 +9,7 @@ import net.corda.core.identity.Party;
 import net.corda.core.schemas.MappedSchema;
 import net.corda.core.schemas.PersistentState;
 import net.corda.core.schemas.QueryableState;
+import net.corda.core.serialization.ConstructorForDeserialization;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
@@ -27,6 +28,7 @@ public class TemplateState implements  QueryableState {
     private final Integer constraint_type;
 
     /* Constructor of your Corda state */
+    @ConstructorForDeserialization
     public TemplateState(String msg, Party sender, Party receiver, Integer constraint_type) {
         this.msg = msg;
         this.sender = sender;
